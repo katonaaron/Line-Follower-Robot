@@ -1,3 +1,8 @@
+/*
+ * Author: Áron Katona
+ * Purpose: Transfer the data from the IR sensors.
+ */
+
 enum IRSensorPins {IRRight = A5, IRCenter = A6, IRLeft = A7};
 
 int SensorData[3];

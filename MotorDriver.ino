@@ -1,3 +1,8 @@
+/*
+ * Author: Áron Katona
+ * Purpose: Communicates with the motor driver. The code responsible for the movement of the robot. 
+ */
+ 
 enum MotorPins {MPEnableLeft = 2, MPForwardLeft, MPBackwardLeft, MPForwardRight, MPBackwardRight, MPEnableRight};
 
 void motorSetup() {

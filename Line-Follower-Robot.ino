@@ -1,3 +1,8 @@
+/*
+ * Author: Áron Katona
+ * Purpose: A robot which follows a black line on a white surface.
+ */
+ 
 enum Directions {LEFT, CENTER, RIGHT, FORWARD, BACKWARD, STOP};
 
 bool wasBlack = false;
