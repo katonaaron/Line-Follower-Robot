@@ -6,7 +6,7 @@
 enum IRSensorPins {IRRight = A5, IRCenter = A6, IRLeft = A7};
 
 int SensorData[3];
-const int minHigh = 500;
+const int minHigh = 200;
 
 void getSensorData() {
   SensorData[LEFT] = analogRead(IRLeft);

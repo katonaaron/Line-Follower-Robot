@@ -15,6 +15,8 @@ void loop() {
   // put your main code here, to run repeatedly:
   getSensorData();
   go(STOP);
+  
+  
 
   if (isWhite(LEFT) && isBlack(CENTER) && isWhite(RIGHT)) {
     go(FORWARD);

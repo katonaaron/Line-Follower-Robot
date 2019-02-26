@@ -3,13 +3,15 @@
  * Purpose: Communicates with the motor driver. The code responsible for the movement of the robot. 
  */
  
-enum MotorPins {MPEnableLeft = 2, MPForwardLeft, MPBackwardLeft, MPForwardRight, MPBackwardRight, MPEnableRight};
+enum MotorPins {MPForwardLeft = 2, MPEnableLeft, MPBackwardLeft, MPForwardRight, MPEnableRight, MPBackwardRight};
+
+const int motorSpeed = 150;
 
 void motorSetup() {
   pinMode(MPEnableRight, OUTPUT);
   pinMode(MPEnableLeft, OUTPUT);
-  analogWrite(MPEnableRight, 200);
-  analogWrite(MPEnableLeft, 200);
+  analogWrite(MPEnableRight, motorSpeed);
+  analogWrite(MPEnableLeft, motorSpeed);
 }
 
 void go(int m_direction) {
