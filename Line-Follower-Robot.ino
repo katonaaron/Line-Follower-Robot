@@ -4,20 +4,38 @@
  */
  
 enum Directions {LEFT, CENTER, RIGHT, FORWARD, BACKWARD, STOP};
+enum IRCommands {IR_START = 0x2C, IR_STOP = 0x30};
 
 bool wasBlack = false;
+bool isStarted = false;
 
 void setup() {
   motorSetup();
+  IRReceiverSetup();
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  switch(IRReceive())
+  {
+    case IR_START:
+      isStarted = true;
+      break;
+    case IR_STOP:
+      isStarted = false;
+      break;
+    default:
+      break;
+  }
+  
+  if(!isStarted)
+  {
+    go(STOP);
+    return;
+  }
+     
   getSensorData();
   go(STOP);
   
-  
-
   if (isWhite(LEFT) && isBlack(CENTER) && isWhite(RIGHT)) {
     go(FORWARD);
     wasBlack = true;
